@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "src",
+    "site": "expensephere-home",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
