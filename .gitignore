@@ -1,0 +1,6 @@
+.idea/
+.firebase/
+node_modules/
+dist/
+deploy/
+serve/
