@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "serve": "gulp serve",
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "lint": "eslint gulpfile.js src"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "eslint": "^7.6.0",
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "bootstrap.native": "^3.0.9"
+  }
+}

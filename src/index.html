@@ -1,40 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Meta data -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="asset/favicon.png" type="image/png" sizes="1024x1024">
+
+  <!-- SEO -->
+  <meta name="keywords" content="expense, manager, money, saver, free, ui, beautiful, personal, app, tracker, finance">
+  <meta name="author" content="Savand Bros">
+  <meta name="description" content="Be in control of your expenses in a beautiful and simple atmosphere.">
+
+  <!-- Title and favicon -->
   <title>Expensephere</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: whitesmoke;
-      max-width: 450px;
-      margin: 30px auto;
-    }
-    p {
-      color: #555;
-    }
-    hr {
-      opacity: 0.25;
-    }
-    a {
-      text-decoration: none;
-      color: #474787;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="icon" type="image/png" sizes="1024x1024" href="asset/img/favicon.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="asset/style.css">
 </head>
 <body>
-<h1>Welcome to Expensephere</h1>
-<p>Be in control of your expenses in a beautiful and simple atmosphere.</p>
-<h2>Use</h2>
-<p>Click <a href="https://web.expensephere.savandbros.com">here</a> to open the web app.</p>
-<p>Click <a href="asset/Expensephere Setup 0.0.1.exe">here</a> to download the desktop app.</p>
-<h2>Connect</h2>
-<p>Click <a href="https://discord.gg/TXw63Ys">here</a> to join our Discord server.</p>
-<p>Click <a href="mailto:expensephere@savandbros.com">here</a> contact us via email.</p>
-<hr>
-<p>2020 &copy; Savand Bros</p>
+
+<!-- Header -->
+<div id="header">
+  <div class="container py-4 d-flex align-items-center">
+    <a href="/" class="d-flex align-items-center text-dark mr-auto">
+      <img class="mr-2" src="asset/img/favicon.png" alt="Expensephere">
+      <span class="font-weight-bold">Expensephere</span>
+    </a>
+    <a class="btn btn-outline-primary d-md-block d-none" href="https://web.expensephere.savandbros.com">Sign In</a>
+    <a class="btn btn-primary ml-2" href="https://web.expensephere.savandbros.com">Get Started</a>
+  </div>
+</div>
+
+<!-- Main -->
+<div id="main" class="bg-primary text-white-50">
+  <div class="container">
+    <div class="d-flex">
+      <a href="/" class="mr-5 mt-3 d-none d-md-block">
+        <img class="rounded-circle shadow" src="asset/img/favicon.png" alt="Expensephere">
+      </a>
+      <div>
+        <h1 class="text-white">Be in control of your expenses in a beautiful and simple atmosphere.</h1>
+        <p class="mt-5">There are many ways to use Expensephere and even more coming soon.</p>
+        <p>
+          <a class="btn btn-light mr-2 mt-2" href="https://web.expensephere.savandbros.com">🌐 Web</a>
+          <a class="btn btn-light mr-2 mt-2" href="asset/file/Expensephere%20Setup%200.0.1.exe">💻 Windows</a>
+          <a class="btn btn-light mr-2 mt-2" href="https://web.expensephere.savandbros.com">📱 Android</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Connect -->
+<div id="connect" class="bg-light border-bottom">
+  <div class="container">
+    <h1>🤝🏻 Connect</h1>
+    <div class="row mt-5">
+      <div class="col-md-9">
+        <p>
+          Do you have a feedback to make Expensephere even more awesome?
+          Want to report a problem?
+          Maybe request a feature?
+          Or just contact us?
+        </p>
+        <p>Well, we'd love that! Here are ways to connect and more coming soon.</p>
+      </div>
+      <div class="col-md-3">
+        <a class="btn btn-block btn-primary" href="https://discord.gg/TXw63Ys">Discord</a>
+        <a class="btn btn-block btn-primary" href="mailto:expensephere@savandbros.com">Email</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div id="footer" class="bg-dark text-light">
+  <div class="container py-5 d-flex justify-content-between align-items-center">
+    <div>Made with 💖 by Savand Bros.</div>
+    <div>2020 &copy; <a href="https://savandbros.com" class="text-light">Savand Bros</a></div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="asset/bootstrap-native.js"></script>
+<script src="asset/script.js"></script>
 </body>
 </html>
