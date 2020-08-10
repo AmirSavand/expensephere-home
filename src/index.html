@@ -40,12 +40,36 @@
       </a>
       <div>
         <h1 class="text-white">Be in control of your expenses in a beautiful and simple atmosphere.</h1>
-        <p class="mt-5">There are many ways to use Expensephere and even more coming soon.</p>
-        <p>
-          <a class="btn btn-light mr-2 mt-2" href="https://web.expensephere.savandbros.com">🌐 Web</a>
-          <a class="btn btn-light mr-2 mt-2" href="asset/file/expensephere-setup-0.1.0.exe">💻 Windows</a>
-          <a class="btn btn-light mr-2 mt-2" href="https://web.expensephere.savandbros.com">📱 Android</a>
-        </p>
+        <div class="mt-5">There are many ways to use Expensephere and even more coming soon.</div>
+        <div>
+          <a class="btn btn-light mr-2 mt-2" href="https://web.expensephere.savandbros.com">
+            <img src="node_modules/@fortawesome/fontawesome-free/svgs/solid/globe.svg">
+            <span>Web</span>
+          </a>
+          <button class="btn btn-secondary mr-2 mt-2 disabled" onclick="alert('Android app is coming soon 💖')">
+            <img src="node_modules/@fortawesome/fontawesome-free/svgs/brands/android.svg">
+            <span>Android</span>
+          </button>
+          <a class="btn btn-light mr-2 mt-2" href="asset/file/expensephere-0.1.0.exe"
+             title="expensephere-64x.exe">
+            <img src="node_modules/@fortawesome/fontawesome-free/svgs/brands/windows.svg">
+            <span>Windows</span>
+          </a>
+          <div class="dropdown d-inline-block">
+            <button class="btn btn-light mr-2 mt-2 dropdown-toggle" data-toggle="dropdown">
+              <img src="node_modules/@fortawesome/fontawesome-free/svgs/brands/linux.svg">
+              <span>Linux</span>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="asset/file/expensephere-0.1.0.deb">
+                <code><span class="text-muted">expensephere</span><b class="text-info">-amd64</b><b>.deb</b></code>
+              </a>
+              <a class="dropdown-item" href="asset/file/expensephere-0.1.0.AppImage">
+                <code><span class="text-muted">expensephere</span><b>.AppImage</b></code>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -76,13 +100,17 @@
 <!-- Footer -->
 <div id="footer" class="bg-dark text-light">
   <div class="container py-5 d-flex justify-content-between align-items-center">
-    <div>Made with 💖 by Savand Bros.</div>
-    <div>2020 &copy; <a href="https://savandbros.com" class="text-light">Savand Bros</a></div>
+    <div>Made with 💖 by <a href="https://savandbros.com" class="text-light">Savand Bros</a>.</div>
+    <div class="d-flex align-content-center">
+      <span>2020</span>
+      <img src="node_modules/@fortawesome/fontawesome-free/svgs/regular/copyright.svg" alt="copyright">
+      <a href="https://savandbros.com" class="text-light">Savand Bros</a>
+    </div>
   </div>
 </div>
 
 <!-- Scripts -->
-<script src="asset/bootstrap-native.js"></script>
+<script src="node_modules/bootstrap.native/dist/bootstrap-native.js"></script>
 <script src="asset/script.js"></script>
 </body>
 </html>

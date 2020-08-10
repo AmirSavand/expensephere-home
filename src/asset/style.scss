@@ -30,6 +30,8 @@ $link-hover-decoration: none;
 $btn-font-weight: $font-weight-bold;
 $btn-padding-x: 30px;
 
+$enable-caret: false;
+
 /* Bootstrap */
 
 @import "node_modules/bootstrap/scss/functions";
@@ -46,7 +48,7 @@ $btn-padding-x: 30px;
 //@import "node_modules/bootstrap/scss/forms";
 @import "node_modules/bootstrap/scss/buttons";
 @import "node_modules/bootstrap/scss/transitions";
-//@import "node_modules/bootstrap/scss/dropdown";
+@import "node_modules/bootstrap/scss/dropdown";
 //@import "node_modules/bootstrap/scss/button-group";
 //@import "node_modules/bootstrap/scss/input-group";
 //@import "node_modules/bootstrap/scss/custom-forms";
@@ -55,7 +57,7 @@ $btn-padding-x: 30px;
 @import "node_modules/bootstrap/scss/card";
 //@import "node_modules/bootstrap/scss/breadcrumb";
 //@import "node_modules/bootstrap/scss/pagination";
-//@import "node_modules/bootstrap/scss/badge";
+@import "node_modules/bootstrap/scss/badge";
 //@import "node_modules/bootstrap/scss/jumbotron";
 //@import "node_modules/bootstrap/scss/alert";
 //@import "node_modules/bootstrap/scss/progress";
@@ -87,8 +89,35 @@ $btn-padding-x: 30px;
     width: 64px;
     height: 64px;
   }
+
+  .btn {
+    text-align: center;
+    width: 125px;
+
+    > img {
+      width: 32px;
+      height: 32px;
+      margin: map_get($spacers, 2) 0;
+      opacity: 0.75;
+    }
+
+    > span {
+      display: block;
+      color: $primary;
+    }
+  }
 }
 
 #connect {
   padding: 100px 0;
+}
+
+#footer {
+  img {
+    width: 16px;
+    height: 16px;
+    filter: invert(1);
+    margin: 4px;
+    position: relative;
+  }
 }

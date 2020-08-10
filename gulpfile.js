@@ -1,5 +1,6 @@
 "use strict";
 
+const merge = require("merge-stream");
 const csso = require("gulp-csso");
 const del = require("del");
 const gulp = require("gulp");
@@ -7,6 +8,16 @@ const htmlmin = require("gulp-htmlmin");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify-es").default;
 const connect = require("gulp-connect");
+const replace = require("gulp-replace");
+
+const svgs = [
+  "solid/globe",
+  "brands/android",
+  "brands/windows",
+  "brands/linux",
+  "regular/handshake",
+  "regular/copyright",
+];
 
 // CLEAN
 
@@ -45,17 +56,22 @@ gulp.task("build:html", () => {
       collapseWhitespace: true,
       removeComments: true,
     }))
+    .pipe(replace('node_modules/@fortawesome/fontawesome-free', 'asset'))
+    .pipe(replace('node_modules/bootstrap.native/dist', 'asset'))
     .pipe(gulp.dest("dist"));
 });
 
 gulp.task("build:asset", () => {
-  return gulp.src(["src/asset/*/**/*"]).pipe(gulp.dest("dist/asset/"));
+  return merge(
+    gulp.src("src/asset/*/**/*")
+      .pipe(gulp.dest("dist/asset/")),
+    gulp.src(["node_modules/@fortawesome/fontawesome-free/svgs/{" + svgs.join() + "}.svg"])
+      .pipe(gulp.dest("dist/asset/svgs")),
+  );
 });
 
 gulp.task("build:node", () => {
-  return gulp.src([
-    "node_modules/bootstrap.native/dist/bootstrap-native.js",
-  ])
+  return gulp.src("node_modules/bootstrap.native/dist/bootstrap-native.js")
     .pipe(uglify())
     .pipe(gulp.dest("dist/asset/"));
 });
@@ -72,7 +88,10 @@ gulp.task("build", gulp.series(
 // SERVE
 
 gulp.task("serve:html", () => {
-  return gulp.src(["src/**/*.html"]).pipe(gulp.dest("serve"));
+  return gulp.src(["src/**/*.html"])
+    .pipe(replace('node_modules/@fortawesome/fontawesome-free', 'asset'))
+    .pipe(replace('node_modules/bootstrap.native/dist', 'asset'))
+    .pipe(gulp.dest("serve"));
 });
 
 gulp.task("serve:style", () => {
@@ -87,7 +106,12 @@ gulp.task("serve:style", () => {
 });
 
 gulp.task("serve:asset", () => {
-  return gulp.src(["src/asset/*/**/*"]).pipe(gulp.dest("serve/asset/"));
+  return merge(
+    gulp.src(["src/asset/*/**/*", "src/asset/*.js"])
+      .pipe(gulp.dest("serve/asset/")),
+    gulp.src(["node_modules/@fortawesome/fontawesome-free/svgs/{" + svgs.join() + "}.svg"])
+      .pipe(gulp.dest("serve/asset/svgs")),
+  );
 });
 
 gulp.task("serve:node", () => {
