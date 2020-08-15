@@ -56,8 +56,8 @@ gulp.task("build:html", () => {
       collapseWhitespace: true,
       removeComments: true,
     }))
-    .pipe(replace('node_modules/@fortawesome/fontawesome-free', 'asset'))
-    .pipe(replace('node_modules/bootstrap.native/dist', 'asset'))
+    .pipe(replace("node_modules/@fortawesome/fontawesome-free", "asset"))
+    .pipe(replace("node_modules/bootstrap.native/dist", "asset"))
     .pipe(gulp.dest("dist"));
 });
 
@@ -89,8 +89,8 @@ gulp.task("build", gulp.series(
 
 gulp.task("serve:html", () => {
   return gulp.src(["src/**/*.html"])
-    .pipe(replace('node_modules/@fortawesome/fontawesome-free', 'asset'))
-    .pipe(replace('node_modules/bootstrap.native/dist', 'asset'))
+    .pipe(replace("node_modules/@fortawesome/fontawesome-free", "asset"))
+    .pipe(replace("node_modules/bootstrap.native/dist", "asset"))
     .pipe(gulp.dest("serve"));
 });
 
