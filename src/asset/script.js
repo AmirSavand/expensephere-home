@@ -12,6 +12,7 @@ window.addEventListener("load", () => {
   function map(x, inMin, inMax, outMin, outMax) {
     return (x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
   }
+
   /**
    * Add animation to OS download buttons.
    */
@@ -46,7 +47,7 @@ window.addEventListener("load", () => {
   script.onload = function () {
     window.dataLayer = window.dataLayer || [];
     function gtag() {
-      dataLayer.push(arguments);
+      window.dataLayer.push(arguments);
     }
     gtag("js", new Date());
     gtag("config", "UA-175669174-2", {
