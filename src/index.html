@@ -19,48 +19,57 @@
 </head>
 <body>
 
-<!-- Header -->
-<div id="header">
-  <div class="container py-4 d-flex align-items-center">
-    <a href="/" class="d-flex align-items-center text-dark mr-auto">
-      <img class="mr-2" src="asset/img/favicon.png" alt="Expensephere">
-      <span class="font-weight-bold">Expensephere</span>
-    </a>
-    <a class="btn btn-outline-primary d-md-block d-none" href="https://web.expensephere.savandbros.com">Sign In</a>
-    <a class="btn btn-primary ml-2" href="https://web.expensephere.savandbros.com">Get Started</a>
-  </div>
-</div>
+<div class="section">
+  <!-- Radar -->
+  <div class="radar"></div>
 
-<!-- Main -->
-<div id="main" class="bg-primary text-white-50">
+  <!-- Bubble corner -->
+  <img class="bubble" src="asset/img/bubble.svg" alt="">
+
+  <!-- Bubble corner -->
+  <img class="bubble second" src="asset/img/bubble.svg" alt="">
+
+  <!-- Shooting star -->
+  <div class="shooting-star"></div>
+
+  <!-- Container -->
   <div class="container">
-    <div class="d-flex">
-      <a href="/" class="mr-5 mt-3 d-none d-md-block">
-        <img class="rounded-circle shadow" src="asset/img/favicon.png" alt="Expensephere">
-      </a>
-      <div>
-        <h1 class="text-white">Be in control of your expenses in a beautiful and simple atmosphere.</h1>
-        <div class="mt-5">There are many ways to use Expensephere and even more coming soon.</div>
-        <div>
-          <a class="btn btn-light mr-2 mt-2" href="https://web.expensephere.savandbros.com">
-            <img src="node_modules/@fortawesome/fontawesome-free/svgs/solid/globe.svg">
-            <span>Web</span>
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <!-- Title -->
+        <h1>Be in control of your expenses in a beautiful and simple atmosphere.</h1>
+
+        <!-- Description -->
+        <p class="description my-4">There are many ways to use Expensephere and even more coming soon.</p>
+
+        <!-- Download buttons -->
+        <div class="d-flex flex-wrap download">
+          <a class="os" href="https://web.expensephere.savandbros.com">
+            <div class="inner">
+              <img src="node_modules/@fortawesome/fontawesome-free/svgs/solid/globe.svg">
+              <span>Web</span>
+            </div>
           </a>
-          <a class="btn btn-light mr-2 mt-2"
-             href="https://play.google.com/store/apps/details?id=com.savandbros.expensephere">
-            <img src="node_modules/@fortawesome/fontawesome-free/svgs/brands/android.svg">
-            <span>Android</span>
+          <a class="os" href="https://play.google.com/store/apps/details?id=com.savandbros.expensephere">
+            <div class="inner">
+              <img src="node_modules/@fortawesome/fontawesome-free/svgs/brands/android.svg">
+              <span>Android</span>
+            </div>
           </a>
-          <a class="btn btn-light mr-2 mt-2" href="asset/file/expensephere-0.1.0.exe"
-             title="expensephere-64x.exe">
-            <img src="node_modules/@fortawesome/fontawesome-free/svgs/brands/windows.svg">
-            <span>Windows</span>
+          <a class="os" href="asset/file/expensephere-0.1.0.exe">
+            <div class="inner">
+              <img src="node_modules/@fortawesome/fontawesome-free/svgs/brands/windows.svg">
+              <span>Windows</span>
+            </div>
           </a>
-          <div class="dropdown d-inline-block">
-            <button class="btn btn-light mr-2 mt-2 dropdown-toggle" data-toggle="dropdown">
-              <img src="node_modules/@fortawesome/fontawesome-free/svgs/brands/linux.svg">
-              <span>Linux</span>
+          <div class="dropdown">
+            <button class="os mr-0 p-0" data-toggle="dropdown">
+              <span class="inner">
+                <img  src="node_modules/@fortawesome/fontawesome-free/svgs/brands/linux.svg">
+                <span>Linux</span>
+              </span>
             </button>
+
             <div class="dropdown-menu">
               <a class="dropdown-item" href="asset/file/expensephere-0.1.0.deb">
                 <code><span class="text-muted">expensephere</span><b class="text-info">-amd64</b><b>.deb</b></code>
@@ -72,8 +81,14 @@
           </div>
         </div>
       </div>
+      <div class="col-12 col-lg-4 d-flex justify-content-center">
+        <div class="morph"></div>
+      </div>
     </div>
   </div>
+  <svg class="bottom-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#F9FAFC" fill-opacity="1" d="M0,256L30,218.7C60,181,120,107,180,101.3C240,96,300,160,360,165.3C420,171,480,117,540,133.3C600,149,660,235,720,250.7C780,267,840,213,900,160C960,107,1020,53,1080,53.3C1140,53,1200,107,1260,138.7C1320,171,1380,181,1410,186.7L1440,192L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+  </svg>
 </div>
 
 <!-- Connect -->
