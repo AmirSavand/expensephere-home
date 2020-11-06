@@ -122,6 +122,19 @@ $enable-caret: false;
   }
 }
 
+header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+
+  .title {
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    margin-left: 8px;
+  }
+}
+
 
 .section {
   position: relative;
@@ -151,7 +164,8 @@ $enable-caret: false;
     }
   }
 
-  .container {
+  .main {
+    animation: translateIn 1s cubic-bezier(0.98, -0.03, 0.13, 1.08);
     padding: 120px 0 0;
     color: white;
 
@@ -227,10 +241,12 @@ $enable-caret: false;
   }
 }
 
-@keyframes fadeIn {
-  100% {
-    transform: scale(1.03);
-    opacity: 0;
+@keyframes translateIn {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 
