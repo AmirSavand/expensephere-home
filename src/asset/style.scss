@@ -166,7 +166,7 @@ header {
 
   .main {
     animation: translateIn 1s cubic-bezier(0.98, -0.03, 0.13, 1.08);
-    padding-top: 120px;
+    padding: 120px 0 0;
     color: white;
 
     .description {
@@ -311,7 +311,6 @@ header {
     position: relative;
     margin-right: 16px;
     color: inherit;
-    margin-bottom: 16px;
   }
 }
 
