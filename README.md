@@ -1,5 +1,9 @@
 # [Expensephere (Home)](https://expensephere.savandbros.com)
 
+[![Deployment](https://github.com/AmirSavand/expensephere-home/actions/workflows/deployment.yml/badge.svg?branch=production)](https://github.com/AmirSavand/expensephere-home/actions/workflows/deployment.yml)
+[![Build](https://github.com/AmirSavand/expensephere-home/actions/workflows/build.yml/badge.svg)](https://github.com/AmirSavand/expensephere-home/actions/workflows/build.yml)
+[![Code Quality](https://github.com/AmirSavand/expensephere-home/actions/workflows/code-quality.yml/badge.svg)](https://github.com/AmirSavand/expensephere-home/actions/workflows/code-quality.yml)
+
 Be in control of your expenses in a beautiful and simple atmosphere.
 
 ## Development
