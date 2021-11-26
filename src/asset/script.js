@@ -1,11 +1,4 @@
 /**
- * Initiate bootstrap.native
- */
-window.addEventListener("load", () => {
-  window.BSN.initCallback();
-});
-
-/**
  * Initiate google analytics
  */
 window.addEventListener("load", () => {

@@ -5,7 +5,7 @@ const csso = require("gulp-csso");
 const del = require("del");
 const gulp = require("gulp");
 const htmlmin = require("gulp-htmlmin");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const uglify = require("gulp-uglify-es").default;
 const connect = require("gulp-connect");
 const replace = require("gulp-replace");
@@ -30,12 +30,7 @@ gulp.task("clean", () => {
 gulp.task("build:style", () => {
   return gulp.src("src/asset/**/*.scss")
     // Compile SASS files
-    .pipe(sass({
-      outputStyle: "nested",
-      precision: 10,
-      includePaths: ["."],
-      onError: console.error.bind(console, "Sass error:"),
-    }))
+    .pipe(sass().on("error", sass.logError))
     // Minify the file
     .pipe(csso())
     // Output
@@ -57,7 +52,8 @@ gulp.task("build:html", () => {
       removeComments: true,
     }))
     .pipe(replace("node_modules/@fortawesome/fontawesome-free", "asset"))
-    .pipe(replace("node_modules/bootstrap.native/dist", "asset"))
+    .pipe(replace("node_modules/bootstrap/dist/js", "asset"))
+    .pipe(replace("node_modules/jquery/dist", "asset"))
     .pipe(gulp.dest("dist"));
 });
 
@@ -71,7 +67,10 @@ gulp.task("build:asset", () => {
 });
 
 gulp.task("build:node", () => {
-  return gulp.src("node_modules/bootstrap.native/dist/bootstrap-native.js")
+  return gulp.src([
+    "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+    "node_modules/jquery/dist/jquery.slim.js",
+  ])
     .pipe(uglify())
     .pipe(gulp.dest("dist/asset/"));
 });
@@ -90,18 +89,14 @@ gulp.task("build", gulp.series(
 gulp.task("serve:html", () => {
   return gulp.src(["src/**/*.html"])
     .pipe(replace("node_modules/@fortawesome/fontawesome-free", "asset"))
-    .pipe(replace("node_modules/bootstrap.native/dist", "asset"))
+    .pipe(replace("node_modules/bootstrap/dist/js", "asset"))
+    .pipe(replace("node_modules/jquery/dist", "asset"))
     .pipe(gulp.dest("serve"));
 });
 
 gulp.task("serve:style", () => {
   return gulp.src("src/asset/style.scss")
-    .pipe(sass({
-      outputStyle: "nested",
-      precision: 10,
-      includePaths: ["."],
-      onError: console.error.bind(console, "Sass error:"),
-    }))
+    .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest("serve/asset/"));
 });
 
@@ -116,7 +111,8 @@ gulp.task("serve:asset", () => {
 
 gulp.task("serve:node", () => {
   return gulp.src([
-    "node_modules/bootstrap.native/dist/bootstrap-native.js",
+    "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+    "node_modules/jquery/dist/jquery.slim.js",
   ]).pipe(gulp.dest("serve/asset/"));
 });
 

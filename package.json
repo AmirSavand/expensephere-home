@@ -6,20 +6,21 @@
     "lint": "eslint gulpfile.js src"
   },
   "devDependencies": {
-    "del": "^5.1.0",
-    "eslint": "^7.6.0",
+    "del": "^6.0.0",
+    "eslint": "^8.3.0",
     "gulp": "^4.0.2",
     "gulp-connect": "^5.7.0",
     "gulp-csso": "^4.0.1",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-uglify-es": "^2.0.0",
-    "merge-stream": "^2.0.0"
+    "gulp-replace": "^1.1.3",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify-es": "^3.0.0",
+    "merge-stream": "^2.0.0",
+    "sass": "^1.43.5"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.14.0",
-    "bootstrap": "^4.5.0",
-    "bootstrap.native": "^3.0.9"
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "jquery": "^3.6.0",
+    "bootstrap": "^4.6.1"
   }
 }

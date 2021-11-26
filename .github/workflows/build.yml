@@ -1,19 +1,19 @@
-name: Code Quality
+name: Build
 
 on:
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, production ]
 
 jobs:
-  code-quality:
-    name: Code Quality
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
         run: npm install
-      - name: Lint
-        run: npm run lint
+      - name: Build
+        run: npm run build
